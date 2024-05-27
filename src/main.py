@@ -1,7 +1,7 @@
 """
 Main program for checkout pricing logic
 """
-from utils import json_utils
+from utils import json_utils, validation_utils
 
 
 UNIT_PRICE_DICT = json_utils.get_unit_prices_from_json('unit_price.json')
@@ -33,5 +33,6 @@ def calculate_total_price(items_str):
     print(total_price)
 
 if __name__ == '__main__':
-    items_str = input("Please provide the checkout items input:\n")
-    calculate_total_price(items_str)
+    input_str = input("Please provide the checkout items input:\n")
+    valid_items_str = validation_utils.validate_input(input_str, 'unit_price.json')
+    calculate_total_price(valid_items_str)

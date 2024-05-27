@@ -21,3 +21,14 @@ def get_special_prices_from_json(file_name):
 
     f.close()
     return special_price_dict
+
+def get_items_from_json(file_name):
+    f = open(file_name)
+    item_prices_json = json.load(f)
+    items_dict = []
+
+    for i in item_prices_json:
+        items_dict.append(i['item'])
+
+    f.close()
+    return items_dict
