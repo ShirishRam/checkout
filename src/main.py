@@ -34,5 +34,8 @@ def calculate_total_price(items_str):
 
 if __name__ == '__main__':
     input_str = input("Please provide the checkout items input:\n")
-    valid_items_str = validation_utils.validate_input(input_str, 'unit_price.json')
-    calculate_total_price(valid_items_str)
+    try:
+        valid_items_str = validation_utils.validate_input(input_str, 'unit_price.json')
+        calculate_total_price(valid_items_str)
+    except Exception as ex:
+        print(ex)
