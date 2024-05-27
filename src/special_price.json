@@ -1,0 +1,12 @@
+[
+  {
+    "item": "A",
+    "special_price_qty": 3,
+    "special_price": 130
+  },
+  {
+    "item": "B",
+    "special_price_qty": 2,
+    "special_price": 45
+  }
+]
